@@ -1,0 +1,14 @@
+PROG = testWriter
+
+CPP = g++ -fPIC
+LINK = g++ -fPIC
+
+CFLAGS = -c
+
+LIB = libCOGLImageWriter.so
+
+$(PROG): $(PROG).o
+	$(LINK) -g -o $(PROG) $(PROG).o $(LIB)
+
+$(PROG).o: $(PROG).c++
+	$(CPP) $(CFLAGS) $(PROG).c++
